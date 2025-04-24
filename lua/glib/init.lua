@@ -82,7 +82,7 @@ end
 ---See also: https://neovim.io/doc/user/lua.html#_lua-module:-vim.glob
 ---@param glob string The glob to find items for
 ---@return fun():string?
-function M.iter(glob)
+function M.glob(glob)
     local items = vim.iter(glob:gmatch("([^/]+)")):totable()
     if #items < 1 then
         return function () return nil end
